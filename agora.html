@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ECG Ágora</title>
+<meta name="description" content="El Ágora de ECG: debates con tesis, refutaciones y evidencia, donde la reputación se gana por lo que aportas.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A0B0D" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FBFBF9" media="(prefers-color-scheme: light)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/reset.css?v=7">
+<link rel="stylesheet" href="css/styles.css?v=7">
+<link rel="stylesheet" href="css/agora.css?v=7">
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="nav" role="banner">
+  <div class="nav__in">
+    <a class="brand" href="index.html" aria-label="ECG, inicio">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".35"/>
+        <path d="M9 11h9M9 16h7M9 21h9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="22.5" cy="16" r="2.4" fill="var(--accent)"/>
+      </svg>
+      <span class="brand__word">ECG</span>
+    </a>
+    <span class="nav__sub">Ágora</span>
+
+    <div class="nav__act">
+      <span class="motor" id="motor">Modo local</span>
+      <div class="sesion" id="sesion" hidden>
+        <span class="sesion__quien" id="quien"></span>
+        <span class="sesion__rep" id="rep"></span>
+        <button class="btn btn--ghost btn--sm" type="button" id="salir">Salir</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="ag">
+  <div class="wrap">
+
+    <div class="aviso" id="aviso" hidden>
+      <p>
+        <strong>Modo local.</strong> Estás probando el Ágora sin base de datos: lo que
+        escribas se guarda solo en este navegador y nadie más puede verlo. En cuanto se
+        conecten las claves de Supabase, los debates pasan a ser reales y compartidos.
+      </p>
+    </div>
+
+    <!-- Entrar / registrarse -->
+    <section class="auth" id="auth" aria-labelledby="auth-titulo">
+      <h1 class="auth__h1" id="auth-titulo">Entrar</h1>
+      <p class="auth__sub">
+        El Ágora es donde las ideas se enfrentan con razonamiento y evidencia. Para
+        participar necesitas un nombre de usuario.
+      </p>
+
+      <form id="auth-form" novalidate>
+        <label class="lab__label" for="auth-handle">Nombre de usuario</label>
+        <input class="wait__in" type="text" id="auth-handle" autocomplete="username"
+               placeholder="tu_usuario" maxlength="20" required>
+
+        <div id="auth-pass-wrap" hidden>
+          <label class="lab__label" for="auth-pass">Contraseña</label>
+          <input class="wait__in" type="password" id="auth-pass" autocomplete="current-password"
+                 placeholder="Al menos 8 caracteres">
+        </div>
+
+        <p class="wait__err" id="auth-err" hidden></p>
+
+        <div class="auth__acts">
+          <button class="btn" type="submit" id="auth-submit">Entrar</button>
+          <button class="btn btn--ghost" type="button" id="auth-toggle">Crear una cuenta</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Aplicación -->
+    <div id="app" hidden>
+
+      <!-- Lista de temas -->
+      <section id="vista-lista" aria-labelledby="lista-h">
+        <h1 class="ag__h1" id="lista-h">Debates abiertos</h1>
+
+        <form class="ag__nuevo" id="nuevo-tema" novalidate>
+          <label class="lab__label" for="nuevo-tema-input">Abrir un debate</label>
+          <div class="ag__nuevo-row">
+            <input class="wait__in" type="text" id="nuevo-tema-input" maxlength="160"
+                   placeholder="¿Debe una plataforma mostrar el recuento de seguidores?" required>
+            <button class="btn" type="submit">Abrir</button>
+          </div>
+          <p class="wait__err" id="nuevo-tema-err" hidden></p>
+        </form>
+
+        <div class="temas" id="temas"></div>
+        <p class="ag__vacio" id="temas-vacio">
+          Todavía no hay debates. Abre el primero y empieza tú la discusión.
+        </p>
+      </section>
+
+      <!-- Un debate -->
+      <section id="vista-tema" tabindex="-1" hidden aria-labelledby="tema-titulo">
+        <button class="ag__volver" type="button" id="volver">← Todos los debates</button>
+
+        <h1 class="ag__h1" id="tema-titulo"></h1>
+        <p class="ag__meta" id="tema-meta"></p>
+
+        <div class="hilo" id="hilo"></div>
+
+        <form class="ag__resp" id="responder" novalidate>
+          <p class="resp__a" id="resp-a" hidden></p>
+
+          <label class="lab__label" for="resp-kind">Tipo de intervención</label>
+          <select class="wait__in" id="resp-kind">
+            <option value="tesis">Tesis — defiendo una postura</option>
+            <option value="refutacion">Refutación — rebato un argumento</option>
+            <option value="matiz">Matiz — preciso algo concreto</option>
+          </select>
+
+          <label class="lab__label" for="resp-body">Tu argumento</label>
+          <textarea class="wait__in" id="resp-body" rows="4" maxlength="1200"
+                    placeholder="Explica tu razonamiento. Rebate la idea, nunca a la persona."></textarea>
+
+          <label class="lab__label" for="resp-evidence">Evidencia (opcional)</label>
+          <input class="wait__in" type="url" id="resp-evidence" placeholder="https://...">
+
+          <p class="wait__err" id="resp-err" hidden></p>
+
+          <div class="auth__acts">
+            <button class="btn" type="submit">Publicar</button>
+            <button class="btn btn--ghost" type="button" id="resp-cancel" hidden>Cancelar respuesta</button>
+          </div>
+        </form>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer class="foot" role="contentinfo">
+  <div class="wrap foot__base">
+    <p>ECG Ágora · Versión inicial en construcción.</p>
+    <p><a href="index.html">Volver a ECG</a> · <a href="legal.html">Aviso legal</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js?v=7"></script>
+<script src="js/app/store.js?v=7"></script>
+<script src="js/app/agora.js?v=7"></script>
+</body>
+</html>

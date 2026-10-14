@@ -1,0 +1,329 @@
+/* ECG — estilos propios del Ágora. Hereda los tokens de styles.css. */
+
+.nav__sub {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.motor {
+  display: none;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .08em;
+  color: var(--text-muted);
+}
+
+.sesion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sesion__quien {
+  font-size: .88rem;
+  font-weight: 650;
+}
+
+.sesion__rep {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .06em;
+  color: var(--accent);
+}
+
+.ag { padding-block: clamp(32px, 5vh, 56px) var(--sec-y); }
+
+.ag .wrap { max-width: 820px; }
+
+.aviso {
+  margin-bottom: 32px;
+  padding: 16px 20px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+  border-radius: var(--radius);
+}
+
+.aviso p {
+  max-width: none;
+  font-size: .9rem;
+  color: var(--text-muted);
+}
+
+.aviso strong { color: var(--accent); }
+
+/* ---------- Entrar ---------- */
+
+.auth {
+  max-width: 440px;
+  margin-inline: auto;
+  padding: clamp(24px, 4vw, 36px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.auth__h1 {
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+  font-weight: 680;
+  letter-spacing: -.028em;
+}
+
+.auth__sub {
+  margin: 12px 0 26px;
+  font-size: .93rem;
+  color: var(--text-muted);
+}
+
+.auth .wait__in { margin-bottom: 18px; }
+
+.auth__acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* ---------- Temas ---------- */
+
+.ag__h1 {
+  font-size: clamp(1.7rem, 4.4vw, 2.5rem);
+  font-weight: 680;
+  line-height: 1.12;
+  letter-spacing: -.03em;
+}
+
+.ag__meta {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: .06em;
+  color: var(--text-muted);
+}
+
+.ag__nuevo {
+  margin: 28px 0 36px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.ag__nuevo-row {
+  display: grid;
+  gap: 10px;
+}
+
+.temas {
+  display: grid;
+  gap: 10px;
+}
+
+.tema {
+  display: block;
+  width: 100%;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  text-align: left;
+  transition: border-color .18s ease, transform .18s ease;
+}
+
+.tema:hover {
+  border-color: var(--accent-line);
+  transform: translateY(-1px);
+}
+
+.tema__t {
+  max-width: none;
+  font-size: 1.02rem;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -.012em;
+}
+
+.tema__m {
+  max-width: none;
+  margin-top: 7px;
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .05em;
+  color: var(--text-muted);
+}
+
+.ag__vacio {
+  padding: 28px 4px;
+  font-size: .92rem;
+  color: var(--text-muted);
+}
+
+.ag__volver {
+  margin-bottom: 22px;
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.ag__volver:hover { color: var(--accent); }
+
+#vista-tema:focus-visible { outline-offset: 6px; }
+
+/* ---------- Hilo ---------- */
+
+.hilo {
+  display: grid;
+  gap: 12px;
+  margin: 30px 0 36px;
+}
+
+.hilo__vacio {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 11px;
+  font-size: .92rem;
+  color: var(--text-muted);
+}
+
+.int {
+  min-width: 0;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+}
+
+.int--hijo {
+  margin-left: clamp(10px, 4vw, 34px);
+  border-left: 2px solid var(--border);
+}
+
+.int--nieto { margin-left: clamp(20px, 8vw, 68px); }
+
+.int__cab {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 10px;
+}
+
+.int__tag {
+  padding: 2px 9px;
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: .64rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background: var(--surface-2);
+  color: var(--text-muted);
+}
+
+.int__tag--tesis {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.int__autor {
+  font-size: .85rem;
+  font-weight: 650;
+}
+
+.int__fecha {
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  color: var(--text-muted);
+}
+
+.int__cuerpo {
+  max-width: none;
+  font-size: .96rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.int__ev {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .05em;
+  color: var(--accent);
+}
+
+.int__acts {
+  display: flex;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.voto,
+.int__ref {
+  padding: 5px 12px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  font-size: .78rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  transition: color .18s ease, border-color .18s ease, background-color .18s ease;
+}
+
+.voto:hover,
+.int__ref:hover {
+  border-color: var(--accent-line);
+  color: var(--accent);
+}
+
+.voto--on {
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
+  color: var(--accent);
+}
+
+/* ---------- Responder ---------- */
+
+.ag__resp {
+  padding: clamp(20px, 3vw, 28px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.ag__resp .wait__in { margin-bottom: 18px; }
+
+.ag__resp textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.55;
+}
+
+.resp__a {
+  margin-bottom: 16px;
+  padding: 9px 13px;
+  background: var(--accent-soft);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .06em;
+  color: var(--accent);
+}
+
+@media (min-width: 620px) {
+  .motor { display: inline-block; }
+  .sesion__rep { display: inline; }
+  .ag__nuevo-row { grid-template-columns: 1fr auto; }
+}

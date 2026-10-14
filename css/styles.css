@@ -1948,3 +1948,18 @@ strong { font-weight: 650; }
 @media (min-width: 1240px) {
   .hero__motto { max-width: 20ch; }
 }
+
+.pil__cta {
+  margin-top: 18px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.pil__cta a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.pil__cta a:hover { text-decoration: underline; }
