@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# PENDIENTE: cambiar por el dominio real antes de publicar
+Sitemap: https://elpicantecl052-pixel.github.io/ECG/sitemap.xml

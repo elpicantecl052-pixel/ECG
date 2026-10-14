@@ -1,0 +1,410 @@
+<title>ECG</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/styles.css">
+
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="nav" role="banner">
+  <div class="nav__in">
+    <a class="brand" href="#top" aria-label="ECG, inicio">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".35"/>
+        <path d="M9 11h9M9 16h7M9 21h9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="22.5" cy="16" r="2.4" fill="var(--accent)"/>
+      </svg>
+      <span class="brand__word">ECG</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Secciones">
+      <a href="#pilares">Pilares</a>
+      <a href="#formatos">Plataforma</a>
+      <a href="#reputacion">Reputación</a>
+      <a href="#economia">Economía</a>
+    </nav>
+
+    <div class="nav__act">
+      <button class="themebtn" type="button" id="theme-toggle" aria-pressed="false">
+        <svg class="themebtn__i themebtn__i--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M12 2.6v2.6M12 18.8v2.6M2.6 12h2.6M18.8 12h2.6M5.4 5.4l1.8 1.8M16.8 16.8l1.8 1.8M18.6 5.4l-1.8 1.8M7.2 16.8l-1.8 1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <svg class="themebtn__i themebtn__i--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M20 14.4A8.4 8.4 0 0 1 9.6 4a8.6 8.6 0 1 0 10.4 10.4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+        <span class="themebtn__label" id="theme-label">Tema oscuro</span>
+      </button>
+      <a class="btn btn--sm" href="#lista">Lista de espera</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== 1. HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero__field" aria-hidden="true">
+      <div class="hero__grid"></div>
+      <div class="hero__glow"></div>
+    </div>
+
+    <div class="wrap hero__in">
+      <p class="eyebrow reveal">Plataforma social global · En construcción</p>
+
+      <h1 class="hero__h1 reveal">ECG</h1>
+
+      <p class="hero__motto reveal">
+        Compite con tus ideas.<br>
+        Destaca con tu <em>talento</em>.<br>
+        Crece con tus resultados.
+      </p>
+
+      <p class="lead hero__lead reveal">
+        Un solo ecosistema que reúne lo que hoy está repartido entre YouTube, TikTok,
+        Instagram, X y Reddit, construido sobre la libertad de expresión, la competencia
+        justa, el conocimiento y las oportunidades económicas.
+      </p>
+
+      <div class="hero__cta reveal">
+        <a class="btn btn--lg" href="#lista">Unirme a la lista de espera</a>
+        <a class="btn btn--ghost btn--lg" href="#propuesta">Por qué existe ECG</a>
+      </div>
+
+      <p class="hero__note reveal">
+        Sin importar tu popularidad, tu dinero o tu experiencia.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 2. PROBLEMA / PROPUESTA ===== -->
+  <section class="sec" id="propuesta" aria-labelledby="propuesta-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">El problema</p>
+      <h2 class="sec__h2 reveal" id="propuesta-h">¿Por qué otra plataforma?</h2>
+
+      <div class="split">
+        <div class="split__col reveal">
+          <p class="split__kicker">Hoy</p>
+          <ul class="list list--minus">
+            <li>La visibilidad se compra o se hereda: quien ya es grande sigue creciendo, quien empieza no arranca.</li>
+            <li>El debate se premia cuando indigna, no cuando razona. Discutir bien no rinde.</li>
+            <li>Tu audiencia, tu tienda, tu comunidad y tus ingresos viven en apps distintas que no se hablan.</li>
+            <li>Las reglas se aplican de forma opaca y sin derecho real a réplica.</li>
+          </ul>
+        </div>
+
+        <div class="split__col split__col--accent reveal">
+          <p class="split__kicker">En ECG</p>
+          <ul class="list list--plus">
+            <li>La reputación se gana por contribuciones, comportamiento y calidad; un perfil nuevo tiene oportunidades reales de ser visto.</li>
+            <li>El desacuerdo es el material de trabajo: se refuta con razonamiento y evidencia, no con insultos.</li>
+            <li>Crear, debatir, competir, vender y cobrar ocurre en el mismo lugar, con el mismo perfil.</li>
+            <li>Las decisiones importantes de moderación tienen revisión y apelación.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="rule-note reveal">
+        <strong>La regla que lo sostiene:</strong> competencia intensa, sin hostilidad.
+        Puedes refutar cualquier idea y defender la tuya con toda la fuerza que quieras.
+        No puedes insultar, humillar, amenazar ni acosar a la persona que la sostiene.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 3. LOS TRES PILARES ===== -->
+  <section class="sec" id="pilares" aria-labelledby="pilares-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">Los tres pilares</p>
+      <h2 class="sec__h2 reveal" id="pilares-h">Tres espacios, un mismo perfil</h2>
+      <p class="lead sec__lead reveal">
+        ECG no es una app con pestañas. Son tres entornos con reglas propias que comparten
+        tu identidad, tu reputación y tu economía.
+      </p>
+
+      <div class="pillars">
+        <article class="pil reveal">
+          <div class="pil__ico" aria-hidden="true">
+            <svg viewBox="0 0 48 48" focusable="false">
+              <path d="M6 40h36" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M24 7 42 17H6L24 7Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+              <path d="M12 20v18M20 20v18M28 20v18M36 20v18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" opacity=".55"/>
+              <circle cx="24" cy="12.5" r="1.9" fill="var(--accent)"/>
+            </svg>
+          </div>
+          <p class="pil__tag">Debate</p>
+          <h3 class="pil__h3">ECG Ágora</h3>
+          <p class="pil__body">
+            Debates inspirados en la filosofía clásica, con razonamientos, evidencias y
+            argumentos estructurados. Las diferencias se convierten en aprendizaje, no en
+            silencio.
+          </p>
+          <ul class="pil__pts">
+            <li>Argumentos con estructura y fuentes citables</li>
+            <li>Réplica y contrarréplica trazables</li>
+            <li>El desacuerdo deja registro, no cicatriz</li>
+          </ul>
+        </article>
+
+        <article class="pil reveal">
+          <div class="pil__ico" aria-hidden="true">
+            <svg viewBox="0 0 48 48" focusable="false">
+              <path d="M10 42V26M20 42V18M30 42V30M40 42V10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <path d="M6 42h36" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+              <circle cx="40" cy="10" r="3.2" fill="var(--accent)"/>
+            </svg>
+          </div>
+          <p class="pil__tag">Competencia</p>
+          <h3 class="pil__h3">ECG Arena</h3>
+          <p class="pil__body">
+            Espacio competitivo donde creadores, empresarios, jugadores, artistas y
+            científicos demuestran habilidades, participan en desafíos y acceden a
+            oportunidades económicas.
+          </p>
+          <ul class="pil__pts">
+            <li>Desafíos abiertos a cualquier nivel</li>
+            <li>Resultados que se miden, no que se declaran</li>
+            <li>El desempeño abre puertas económicas</li>
+          </ul>
+        </article>
+
+        <article class="pil reveal">
+          <div class="pil__ico" aria-hidden="true">
+            <svg viewBox="0 0 48 48" focusable="false">
+              <path d="M9 18h30l-2.5 22H11.5L9 18Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+              <path d="M17.5 18v-4.5a6.5 6.5 0 0 1 13 0V18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              <circle cx="24" cy="29" r="3.2" fill="var(--accent)"/>
+            </svg>
+          </div>
+          <p class="pil__tag">Economía</p>
+          <h3 class="pil__h3">ECG Market</h3>
+          <p class="pil__body">
+            Promociona productos, ofrece servicios, construye marca personal, colabora y
+            desarrolla negocios dentro de la plataforma, sin sacar a tu audiencia fuera.
+          </p>
+          <ul class="pil__pts">
+            <li>Tienda y servicios junto a tu contenido</li>
+            <li>Colaboraciones entre perfiles</li>
+            <li>Marca personal con historial verificable</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. TODO EN UN SOLO LUGAR ===== -->
+  <section class="sec sec--alt" id="formatos" aria-labelledby="formatos-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">La plataforma</p>
+      <h2 class="sec__h2 reveal" id="formatos-h">Todo en un solo lugar</h2>
+      <p class="lead sec__lead reveal">
+        Un perfil, una reputación, una economía. Doce formatos que hoy te obligan a vivir
+        en cinco aplicaciones distintas.
+      </p>
+
+      <ul class="chips reveal">
+        <li class="chip">Videos cortos</li>
+        <li class="chip">Videos largos</li>
+        <li class="chip">Directos</li>
+        <li class="chip">Publicaciones</li>
+        <li class="chip">Imágenes</li>
+        <li class="chip">Comunidades</li>
+        <li class="chip">Mensajería</li>
+        <li class="chip">Perfiles</li>
+        <li class="chip">Clasificaciones</li>
+        <li class="chip">Tiendas</li>
+        <li class="chip">Publicidad</li>
+        <li class="chip">Suscripciones</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== 5. REPUTACIÓN Y MODERACIÓN ===== -->
+  <section class="sec" id="reputacion" aria-labelledby="reputacion-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">Reputación y moderación</p>
+      <h2 class="sec__h2 reveal" id="reputacion-h">Se gana, no se compra</h2>
+
+      <div class="two">
+        <div class="two__text">
+          <p class="reveal">
+            La reputación en ECG se construye sobre tres cosas: lo que aportas, cómo te
+            comportas y la calidad de lo que haces. No sobre cuántos te siguen. Un perfil
+            recién creado no empieza invisible: tiene oportunidades reales de ser
+            descubierto desde el primer día.
+          </p>
+          <p class="reveal">
+            La IA asiste en el descubrimiento y en la moderación, pero no castiga
+            automáticamente una opinión polémica ni una crítica legítima. Y cuando una
+            decisión afecta de verdad a alguien, esa decisión se puede revisar y apelar.
+          </p>
+
+          <ul class="facts reveal">
+            <li><strong>Aporte</strong><span>Lo que construyes y lo que resuelves para otros</span></li>
+            <li><strong>Comportamiento</strong><span>Cómo tratas a quien piensa distinto</span></li>
+            <li><strong>Calidad</strong><span>El nivel de lo que publicas, no su volumen</span></li>
+          </ul>
+        </div>
+
+        <figure class="two__fig reveal">
+          <svg viewBox="0 0 320 300" class="diag" role="img" aria-labelledby="diag-t diag-d">
+            <title id="diag-t">Comparación de visibilidad: por popularidad frente a por reputación</title>
+            <desc id="diag-d">Dos modelos comparados. En un modelo por popularidad, la visibilidad se concentra casi por completo en los perfiles que ya son grandes y los perfiles nuevos no tienen salida. En el modelo de reputación de ECG, la visibilidad se reparte de forma más pareja entre perfiles grandes, medianos y nuevos según su aporte, comportamiento y calidad.</desc>
+
+            <text x="8" y="18" class="diag__lbl">Por popularidad</text>
+            <rect x="8" y="30" width="250" height="14" rx="3" class="diag__bar diag__bar--mute"/>
+            <rect x="8" y="52" width="42" height="14" rx="3" class="diag__bar diag__bar--mute"/>
+            <rect x="8" y="74" width="14" height="14" rx="3" class="diag__bar diag__bar--mute"/>
+            <text x="8" y="108" class="diag__cap">Perfil nuevo: sin salida</text>
+
+            <line x1="8" y1="130" x2="312" y2="130" class="diag__rule"/>
+
+            <text x="8" y="162" class="diag__lbl">Por reputación</text>
+            <rect x="8" y="174" width="168" height="14" rx="3" class="diag__bar"/>
+            <rect x="8" y="196" width="132" height="14" rx="3" class="diag__bar"/>
+            <rect x="8" y="218" width="112" height="14" rx="3" class="diag__bar"/>
+            <rect x="8" y="240" width="88" height="14" rx="3" class="diag__bar diag__bar--new"/>
+            <text x="8" y="274" class="diag__cap">Perfil nuevo: con oportunidad</text>
+          </svg>
+          <figcaption>Esquema conceptual del reparto de visibilidad. No representa datos medidos.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. MODELO ECONÓMICO ===== -->
+  <section class="sec sec--alt" id="economia" aria-labelledby="economia-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">Modelo económico</p>
+      <h2 class="sec__h2 reveal" id="economia-h">La plataforma gana cuando tú ganas</h2>
+      <p class="lead sec__lead reveal">
+        Cinco fuentes de ingreso que sostienen el ecosistema y que reparten valor hacia
+        quien lo crea.
+      </p>
+
+      <div class="econ">
+        <article class="econ__it reveal">
+          <h3>Publicidad</h3>
+          <p>Espacios comerciales dentro de la plataforma, abiertos tanto a marcas como a negocios pequeños.</p>
+        </article>
+        <article class="econ__it reveal">
+          <h3>Suscripciones</h3>
+          <p>Acceso de pago a creadores, comunidades y contenido, gestionado dentro del mismo perfil.</p>
+        </article>
+        <article class="econ__it reveal">
+          <h3>Comisiones</h3>
+          <p>Una parte de las ventas y los servicios que ocurren en ECG Market.</p>
+        </article>
+        <article class="econ__it reveal">
+          <h3>Servicios premium</h3>
+          <p>Funciones avanzadas para quien quiere operar a mayor escala.</p>
+        </article>
+        <article class="econ__it reveal">
+          <h3>Herramientas para creadores</h3>
+          <p>Producción, análisis y gestión para trabajar en serio, no solo para publicar.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. FILOSOFÍA ===== -->
+  <section class="sec quote-sec" id="filosofia" aria-labelledby="filosofia-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">Filosofía</p>
+      <h2 class="vh" id="filosofia-h">Filosofía de ECG</h2>
+      <blockquote class="quote reveal">
+        <p>
+          Todas las personas tienen derecho a competir, crecer, expresarse y prosperar.
+          Las ideas pueden enfrentarse <em>sin que las personas tengan que destruirse entre sí</em>.
+        </p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ===== 8. LISTA DE ESPERA ===== -->
+  <section class="sec cta-sec" id="lista" aria-labelledby="lista-h">
+    <div class="wrap wrap--narrow">
+      <p class="eyebrow reveal">Lista de espera</p>
+      <h2 class="sec__h2 reveal" id="lista-h">Entra antes que el resto</h2>
+      <p class="lead reveal">
+        ECG todavía no está abierta al público. Deja tu correo y te avisamos cuando haya
+        acceso, sin ruido de por medio.
+      </p>
+
+      <form class="wait" id="waitlist" novalidate>
+        <div class="wait__row">
+          <div class="wait__field">
+            <label class="wait__label" for="email">Correo electrónico</label>
+            <input class="wait__in" type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" required aria-describedby="email-help email-err">
+          </div>
+          <button class="btn btn--lg" type="submit" id="wait-submit">Reservar mi lugar</button>
+        </div>
+
+        <p class="wait__help" id="email-help">Solo lo usamos para avisarte del lanzamiento. Nada más.</p>
+        <p class="wait__err" id="email-err" hidden></p>
+      </form>
+
+      <div class="wait__ok" id="wait-ok" hidden role="status">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="10.4" fill="none" stroke="currentColor" stroke-width="1.8" opacity=".4"/>
+          <path d="m7.4 12.4 3.1 3.1 6.1-6.9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <p class="wait__ok-h">Listo, estás dentro.</p>
+          <p class="wait__ok-b" id="wait-ok-body"></p>
+        </div>
+      </div>
+
+      <p class="wait__demo reveal">
+        Demostración: el formulario valida en tu navegador y todavía no envía datos a
+        ningún servidor.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot" role="contentinfo">
+  <div class="wrap foot__in">
+    <div class="foot__brand">
+      <a class="brand" href="#top" aria-label="ECG, volver arriba">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".35"/>
+          <path d="M9 11h9M9 16h7M9 21h9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          <circle cx="22.5" cy="16" r="2.4" fill="var(--accent)"/>
+        </svg>
+        <span class="brand__word">ECG</span>
+      </a>
+      <p class="foot__tag">Compite con tus ideas. Destaca con tu talento. Crece con tus resultados.</p>
+    </div>
+
+    <nav class="foot__nav" aria-label="Pie de página">
+      <div class="foot__grp">
+        <h2 class="foot__h">Plataforma</h2>
+        <a href="#pilares">ECG Ágora</a>
+        <a href="#pilares">ECG Arena</a>
+        <a href="#pilares">ECG Market</a>
+        <a href="#formatos">Formatos</a>
+      </div>
+      <div class="foot__grp">
+        <h2 class="foot__h">Proyecto</h2>
+        <a href="#propuesta">La propuesta</a>
+        <a href="#reputacion">Reputación</a>
+        <a href="#economia">Economía</a>
+        <a href="#filosofia">Filosofía</a>
+      </div>
+      <div class="foot__grp">
+        <h2 class="foot__h">Contacto</h2>
+        <span class="foot__ph">[PENDIENTE: correo de contacto]</span>
+        <span class="foot__ph">[PENDIENTE: redes sociales]</span>
+        <a href="#lista">Lista de espera</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="wrap foot__base">
+    <p>ECG · Proyecto en construcción. Todavía no hay plataforma pública ni fecha de lanzamiento anunciada.</p>
+    <p class="foot__ph">[PENDIENTE: aviso legal y política de privacidad]</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>

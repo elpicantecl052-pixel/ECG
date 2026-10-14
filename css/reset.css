@@ -1,0 +1,42 @@
+/* ECG — reset mínimo */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body,
+h1, h2, h3, h4,
+p, figure, blockquote, ul, ol, dl, dd {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a { color: inherit; }
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button { cursor: pointer; }
+
+:where(h1, h2, h3) { text-wrap: balance; }
+
+:where(p, li) { text-wrap: pretty; }
