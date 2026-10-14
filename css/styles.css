@@ -808,6 +808,23 @@ strong { font-weight: 650; }
 
 .wait__row .btn { align-self: end; }
 
+.wait__row .btn:disabled {
+  cursor: progress;
+  opacity: .62;
+  transform: none;
+  filter: none;
+}
+
+/* Trampa para bots: fuera de la vista pero no con display:none,
+   que algunos bots detectan. */
+.wait__trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .wait__help,
 .wait__err,
 .wait__demo {

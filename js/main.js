@@ -2,6 +2,27 @@
 (function () {
   'use strict';
 
+  /* ----------------------------------------------------------
+     Configuración de la lista de espera
+
+     Servicio actual: FormSubmit (formsubmit.co). No necesita cuenta.
+     La primera vez que alguien envía el formulario, FormSubmit manda un
+     correo de activación a la dirección de abajo; hasta que se pulse ese
+     enlace, los envíos no se entregan.
+
+     Para ocultar el correo del código fuente: una vez activado, FormSubmit
+     da un identificador aleatorio en su panel. Sustituye la dirección por
+     ese identificador y los rastreadores de spam dejan de verlo.
+
+     Para cambiar de servicio, basta con cambiar esta constante:
+       Formspree   https://formspree.io/f/TU_ID       (50 envíos/mes)
+       Web3Forms   https://api.web3forms.com/submit   (250 envíos/mes, con access_key)
+     Los tres aceptan JSON por POST y responden JSON.
+     ---------------------------------------------------------- */
+
+  var FORM_ENDPOINT = 'https://formsubmit.co/ajax/elpicantecl052@gmail.com';
+  var FORM_TIMEOUT = 12000;
+
   var root = document.documentElement;
 
   /* ----------------------------------------------------------
@@ -139,6 +160,79 @@
     input.removeAttribute('aria-invalid');
   }
 
+  var submit = document.getElementById('wait-submit');
+  var sending = false;
+
+  function setSending(on) {
+    sending = on;
+    if (!submit) return;
+    submit.disabled = on;
+    submit.textContent = on ? 'Enviando…' : 'Reservar mi lugar';
+    form.setAttribute('aria-busy', on ? 'true' : 'false');
+  }
+
+  function showSuccess(value) {
+    if (successBody) {
+      successBody.textContent =
+        'Apuntamos ' + value + '. Te escribiremos a esa dirección cuando ECG abra el acceso.';
+    }
+    form.hidden = true;
+    if (success) {
+      success.hidden = false;
+      success.setAttribute('tabindex', '-1');
+      success.focus();
+    }
+  }
+
+  /* Envía el correo al servicio configurado. Devuelve una promesa que
+     rechaza si la red falla, si tarda demasiado o si el servicio responde
+     con un error. */
+  function send(value) {
+    var controller = typeof AbortController === 'function' ? new AbortController() : null;
+    var timer = window.setTimeout(function () {
+      if (controller) controller.abort();
+    }, FORM_TIMEOUT);
+
+    var payload = {
+      email: value,
+      _subject: 'ECG — nueva alta en la lista de espera',
+      _template: 'table',
+      _captcha: 'false'
+    };
+
+    var trap = document.getElementById('empresa');
+    if (trap) payload._honey = trap.value;
+
+    var options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(payload)
+    };
+    if (controller) options.signal = controller.signal;
+
+    return fetch(FORM_ENDPOINT, options)
+      .then(function (response) {
+        window.clearTimeout(timer);
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        return response.json().catch(function () {
+          return {};
+        });
+      })
+      .then(function (data) {
+        /* FormSubmit responde {success:"true"}; Formspree y Web3Forms
+           usan otras formas, así que solo tratamos como fallo lo que
+           venga marcado explícitamente como error. */
+        if (data && (data.success === false || data.success === 'false')) {
+          throw new Error(data.message || 'Respuesta de error del servicio');
+        }
+        return data;
+      })
+      .catch(function (err) {
+        window.clearTimeout(timer);
+        throw err;
+      });
+  }
+
   if (form && input) {
     input.addEventListener('input', function () {
       if (input.getAttribute('aria-invalid') === 'true') clearError();
@@ -146,6 +240,7 @@
 
     form.addEventListener('submit', function (event) {
       event.preventDefault();
+      if (sending) return;
 
       var value = input.value.trim();
 
@@ -161,17 +256,28 @@
 
       clearError();
 
-      if (successBody) {
-        successBody.textContent =
-          'Guardamos ' + value + ' en esta demostración. Cuando el formulario esté conectado, te avisaremos ahí del lanzamiento.';
+      /* Si el navegador no tiene fetch, no perdemos el correo en silencio. */
+      if (typeof window.fetch !== 'function') {
+        showError('Tu navegador no permite enviar el formulario. Escríbenos por correo y te apuntamos a mano.');
+        return;
       }
 
-      form.hidden = true;
-      if (success) {
-        success.hidden = false;
-        success.setAttribute('tabindex', '-1');
-        success.focus();
-      }
+      setSending(true);
+
+      send(value)
+        .then(function () {
+          setSending(false);
+          showSuccess(value);
+        })
+        .catch(function (err) {
+          setSending(false);
+          var aborted = err && (err.name === 'AbortError' || /abort/i.test(String(err.message)));
+          showError(
+            aborted
+              ? 'El envío tardó demasiado. Revisa tu conexión y vuelve a intentarlo.'
+              : 'No pudimos guardar tu correo ahora mismo. Inténtalo de nuevo en un momento.'
+          );
+        });
     });
   }
 })();

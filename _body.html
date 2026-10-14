@@ -335,6 +335,12 @@
           <button class="btn btn--lg" type="submit" id="wait-submit">Reservar mi lugar</button>
         </div>
 
+        <!-- Trampa para bots: invisible y vacía para una persona real. -->
+        <div class="wait__trap" aria-hidden="true">
+          <label for="empresa">No rellenes este campo</label>
+          <input type="text" id="empresa" name="_honey" tabindex="-1" autocomplete="off">
+        </div>
+
         <p class="wait__help" id="email-help">Solo lo usamos para avisarte del lanzamiento. Nada más.</p>
         <p class="wait__err" id="email-err" hidden></p>
       </form>
