@@ -13,9 +13,10 @@
 
     <nav class="nav__links" aria-label="Secciones">
       <a href="#pilares">Pilares</a>
-      <a href="#formatos">Plataforma</a>
-      <a href="#reputacion">Reputación</a>
+      <a href="#producto">Producto</a>
+      <a href="#juegos">Pruébalo</a>
       <a href="#economia">Economía</a>
+      <a href="#faq">Preguntas</a>
     </nav>
 
     <div class="nav__act">
@@ -187,6 +188,110 @@
     </div>
   </section>
 
+  <!-- ===== 3b. LA PANTALLA DEL PRODUCTO ===== -->
+  <section class="sec sec--alt" id="producto" aria-labelledby="producto-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">El producto</p>
+      <h2 class="sec__h2 reveal" id="producto-h">Cómo se ve por dentro</h2>
+      <p class="lead sec__lead reveal">
+        Una aproximación a las tres pantallas principales. Es una maqueta de diseño: los
+        perfiles y los números son de ejemplo, no hay datos reales detrás.
+      </p>
+
+      <div class="demo reveal">
+        <div class="demo__tabs" role="tablist" aria-label="Pantallas de ECG">
+          <button class="demo__tab" role="tab" id="tab-agora" aria-controls="panel-agora" aria-selected="true">Ágora</button>
+          <button class="demo__tab" role="tab" id="tab-arena" aria-controls="panel-arena" aria-selected="false" tabindex="-1">Arena</button>
+          <button class="demo__tab" role="tab" id="tab-market" aria-controls="panel-market" aria-selected="false" tabindex="-1">Market</button>
+        </div>
+
+        <div class="screen">
+          <div class="screen__bar" aria-hidden="true">
+            <span class="screen__dot"></span><span class="screen__dot"></span><span class="screen__dot"></span>
+            <span class="screen__url">ecg · <span id="screen-label">Ágora</span></span>
+          </div>
+
+          <!-- Ágora -->
+          <div class="screen__panel" role="tabpanel" id="panel-agora" aria-labelledby="tab-agora" tabindex="0">
+            <p class="thread__topic">¿Debe una plataforma mostrar el recuento de seguidores?</p>
+            <div class="thread">
+              <article class="post">
+                <div class="post__who"><span class="av av--a" aria-hidden="true">M</span><span class="post__name">mariela_k</span><span class="rep">Reputación 812</span></div>
+                <p class="post__claim"><span class="post__tag">Tesis</span> Ocultarlo mide las ideas, no la fama.</p>
+                <p class="post__ev">Evidencia citada · 2 estudios</p>
+                <div class="post__acts"><span>▲ 147 de acuerdo</span><span>⤷ 3 refutaciones</span></div>
+              </article>
+
+              <article class="post post--reply">
+                <div class="post__who"><span class="av av--b" aria-hidden="true">J</span><span class="post__name">jorge.dev</span><span class="rep">Reputación 1.204</span></div>
+                <p class="post__claim"><span class="post__tag post__tag--ref">Refutación</span> Sin señal de audiencia, el spam sube igual de rápido.</p>
+                <p class="post__ev">Evidencia citada · 1 informe</p>
+                <div class="post__acts"><span>▲ 96 de acuerdo</span><span>⤷ 1 refutación</span></div>
+              </article>
+
+              <article class="post post--reply post--deep">
+                <div class="post__who"><span class="av av--c" aria-hidden="true">N</span><span class="post__name">nuevo_ayer</span><span class="rep rep--new">Perfil nuevo</span></div>
+                <p class="post__claim"><span class="post__tag post__tag--mat">Matiz</span> Se puede mostrar a quien publica, no a quien lee.</p>
+                <div class="post__acts"><span>▲ 61 de acuerdo</span><span class="post__boost">Impulsado por calidad</span></div>
+              </article>
+            </div>
+            <p class="screen__note">Un perfil creado ayer aparece junto a uno de 1.204 de reputación, porque el argumento lo merece.</p>
+          </div>
+
+          <!-- Arena -->
+          <div class="screen__panel" role="tabpanel" id="panel-arena" aria-labelledby="tab-arena" tabindex="0" hidden>
+            <div class="chal">
+              <div class="chal__head">
+                <div>
+                  <p class="chal__kind">Desafío abierto · Diseño</p>
+                  <p class="chal__title">Rediseña un panel de control en 48 horas</p>
+                </div>
+                <span class="chal__prize">Premio <strong>$400</strong></span>
+              </div>
+              <div class="chal__meta"><span>312 participantes</span><span>Cierra en 11 h</span><span>Abierto a cualquier nivel</span></div>
+            </div>
+
+            <ol class="board">
+              <li class="board__row"><span class="board__n">1</span><span class="av av--b" aria-hidden="true">J</span><span class="board__name">jorge.dev</span><span class="board__bar"><i style="width:94%"></i></span><span class="board__sc">94</span></li>
+              <li class="board__row"><span class="board__n">2</span><span class="av av--d" aria-hidden="true">S</span><span class="board__name">sofia.estudio</span><span class="board__bar"><i style="width:89%"></i></span><span class="board__sc">89</span></li>
+              <li class="board__row board__row--me"><span class="board__n">3</span><span class="av av--c" aria-hidden="true">N</span><span class="board__name">nuevo_ayer <span class="rep rep--new">Perfil nuevo</span></span><span class="board__bar"><i style="width:85%"></i></span><span class="board__sc">85</span></li>
+              <li class="board__row"><span class="board__n">4</span><span class="av av--a" aria-hidden="true">M</span><span class="board__name">mariela_k</span><span class="board__bar"><i style="width:78%"></i></span><span class="board__sc">78</span></li>
+            </ol>
+            <p class="screen__note">La clasificación mide el resultado entregado, no el tamaño de la audiencia.</p>
+          </div>
+
+          <!-- Market -->
+          <div class="screen__panel" role="tabpanel" id="panel-market" aria-labelledby="tab-market" tabindex="0" hidden>
+            <div class="shop">
+              <article class="item">
+                <div class="item__img item__img--1" aria-hidden="true"></div>
+                <p class="item__name">Plantillas de panel</p>
+                <p class="item__by">sofia.estudio</p>
+                <p class="item__price">$24</p>
+              </article>
+              <article class="item">
+                <div class="item__img item__img--2" aria-hidden="true"></div>
+                <p class="item__name">Asesoría 1:1, 45 min</p>
+                <p class="item__by">jorge.dev</p>
+                <p class="item__price">$80</p>
+              </article>
+              <article class="item">
+                <div class="item__img item__img--3" aria-hidden="true"></div>
+                <p class="item__name">Curso de argumentación</p>
+                <p class="item__by">mariela_k</p>
+                <p class="item__price">$39</p>
+              </article>
+            </div>
+            <div class="shop__note">
+              <p><strong>Vendes donde ya te leen.</strong> El mismo perfil que debate en el Ágora y compite en la Arena es el que cobra aquí. Sin sacar a nadie fuera de la plataforma.</p>
+            </div>
+            <p class="screen__note">Precios de ejemplo para ilustrar el formato.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== 4. TODO EN UN SOLO LUGAR ===== -->
   <section class="sec sec--alt" id="formatos" aria-labelledby="formatos-h">
     <div class="wrap">
@@ -298,6 +403,237 @@
           <h3>Herramientas para creadores</h3>
           <p>Producción, análisis y gestión para trabajar en serio, no solo para publicar.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6b. MINIJUEGOS ===== -->
+  <section class="sec" id="juegos" aria-labelledby="juegos-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">Pruébalo</p>
+      <h2 class="sec__h2 reveal" id="juegos-h">Dos minutos para entender ECG</h2>
+      <p class="lead sec__lead reveal">
+        Dos juegos cortos. El primero es la regla del Ágora; el segundo, la lógica de la
+        Arena. Se juegan aquí mismo, sin registrarse.
+      </p>
+
+      <div class="games">
+
+        <!-- Juego 1: Ágora -->
+        <article class="game reveal" id="game-agora">
+          <p class="game__tag">Ágora</p>
+          <h3 class="game__h3">¿Argumento o ataque?</h3>
+          <p class="game__intro">
+            En ECG puedes refutar cualquier idea, pero no humillar a quien la sostiene.
+            Clasifica estas ocho frases.
+          </p>
+
+          <div class="game__play">
+            <p class="game__progress"><span id="ag-n">1</span> de <span id="ag-total">8</span></p>
+            <blockquote class="game__quote"><p id="ag-phrase">Cargando…</p></blockquote>
+            <div class="game__btns">
+              <button class="btn btn--ghost" type="button" id="ag-arg">Es un argumento</button>
+              <button class="btn btn--ghost" type="button" id="ag-atk">Es un ataque</button>
+            </div>
+            <p class="game__fb" id="ag-fb" role="status"></p>
+          </div>
+
+          <div class="game__end" id="ag-end" hidden>
+            <p class="game__score"><span id="ag-score">0</span> / 8</p>
+            <p class="game__verdict" id="ag-verdict"></p>
+            <button class="btn btn--ghost btn--sm" type="button" id="ag-again">Jugar otra vez</button>
+          </div>
+        </article>
+
+        <!-- Juego 2: Arena -->
+        <article class="game reveal" id="game-arena">
+          <p class="game__tag">Arena</p>
+          <h3 class="game__h3">Reto de precisión</h3>
+          <p class="game__intro">
+            Diez objetivos, lo más rápido posible. Tu puntuación se compara con la de la
+            tabla, no con tu número de seguidores.
+          </p>
+
+          <div class="game__play">
+            <div class="arena" id="arena-field">
+              <button class="arena__target" type="button" id="arena-target" hidden>Toca aquí</button>
+              <p class="arena__idle" id="arena-idle">Pulsa empezar y toca cada objetivo que aparezca.</p>
+            </div>
+            <div class="arena__hud">
+              <span>Objetivo <strong id="ar-n">0</strong>/10</span>
+              <span>Media <strong id="ar-avg">—</strong></span>
+            </div>
+            <div class="game__btns">
+              <button class="btn btn--ghost" type="button" id="ar-start">Empezar</button>
+            </div>
+          </div>
+
+          <div class="game__end" id="ar-end" hidden>
+            <p class="game__score"><span id="ar-final">0</span> ms de media</p>
+            <p class="game__verdict" id="ar-verdict"></p>
+            <button class="btn btn--ghost btn--sm" type="button" id="ar-again">Reintentar</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6c. CREAR ENCUESTAS Y RETOS ===== -->
+  <section class="sec sec--alt" id="crear" aria-labelledby="crear-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">Crea tú</p>
+      <h2 class="sec__h2 reveal" id="crear-h">Encuestas y retos, hechos por ti</h2>
+      <p class="lead sec__lead reveal">
+        En ECG cualquiera podrá lanzar una encuesta o un reto sin pedir permiso ni saber
+        programar. Pruébalo aquí: crea uno y queda guardado.
+      </p>
+
+      <div class="lab">
+        <form class="lab__form reveal" id="lab-form">
+          <div class="lab__type" role="radiogroup" aria-label="Tipo">
+            <label class="lab__opt"><input type="radio" name="tipo" value="encuesta" checked> <span>Encuesta</span></label>
+            <label class="lab__opt"><input type="radio" name="tipo" value="reto"> <span>Reto</span></label>
+          </div>
+
+          <label class="lab__label" for="lab-q">Pregunta</label>
+          <input class="wait__in" type="text" id="lab-q" maxlength="140" placeholder="¿Qué deberíamos construir primero en ECG?" required>
+
+          <p class="lab__label" id="lab-opts-label">Opciones</p>
+          <div class="lab__opts" id="lab-opts" role="group" aria-labelledby="lab-opts-label">
+            <div class="lab__row">
+              <input class="wait__in" type="text" maxlength="60" placeholder="Opción 1" required>
+              <button class="lab__correct" type="button" aria-label="Marcar como respuesta correcta" hidden>✓</button>
+            </div>
+            <div class="lab__row">
+              <input class="wait__in" type="text" maxlength="60" placeholder="Opción 2" required>
+              <button class="lab__correct" type="button" aria-label="Marcar como respuesta correcta" hidden>✓</button>
+            </div>
+          </div>
+
+          <p class="lab__hint" id="lab-hint">Puedes añadir hasta 4 opciones.</p>
+
+          <div class="lab__acts">
+            <button class="btn btn--ghost btn--sm" type="button" id="lab-add">Añadir opción</button>
+            <button class="btn" type="submit">Publicar</button>
+          </div>
+          <p class="wait__err" id="lab-err" hidden></p>
+        </form>
+
+        <div class="lab__feed reveal">
+          <p class="lab__feed-h">Publicado por ti</p>
+          <div id="lab-list"></div>
+          <p class="lab__empty" id="lab-empty">Todavía no has creado nada. Lo que publiques aparecerá aquí.</p>
+        </div>
+      </div>
+
+      <p class="lab__demo reveal">
+        Demostración: lo que crees se guarda solo en este navegador y nadie más puede
+        verlo. En ECG, esto será público y compartido.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 6d. PREGUNTAS FRECUENTES ===== -->
+  <section class="sec" id="faq" aria-labelledby="faq-h">
+    <div class="wrap wrap--narrow">
+      <p class="eyebrow reveal">Preguntas frecuentes</p>
+      <h2 class="sec__h2 reveal" id="faq-h">Lo que todo el mundo pregunta</h2>
+
+      <div class="faq reveal">
+        <details class="faq__it">
+          <summary class="faq__q">¿En qué se diferencia de las redes que ya existen?</summary>
+          <div class="faq__a">
+            <p>
+              En que no tienes que elegir. Hoy el vídeo está en un sitio, el debate en
+              otro, la tienda en un tercero y la comunidad en un cuarto, y tu reputación
+              no viaja entre ellos. En ECG el mismo perfil debate, compite, publica y
+              cobra, y lo que ganas en un sitio cuenta en los demás.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq__it">
+          <summary class="faq__q">¿Cómo se evita que esto acabe en insultos como todo lo demás?</summary>
+          <div class="faq__a">
+            <p>
+              Separando la idea de la persona. Puedes refutar cualquier postura con toda
+              la dureza que quieras, y eso se premia. Lo que no se permite es insultar,
+              humillar, amenazar ni acosar a quien la defiende. La reputación recoge cómo
+              tratas a quien piensa distinto, así que atacar sale caro y argumentar bien
+              sale a cuenta.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq__it">
+          <summary class="faq__q">¿Entonces se censuran las opiniones polémicas?</summary>
+          <div class="faq__a">
+            <p>
+              No. La IA asiste en el descubrimiento y en la moderación, pero no castiga
+              automáticamente una opinión incómoda ni una crítica legítima. Y cuando una
+              decisión afecta de verdad a alguien, se puede revisar y apelar: una persona
+              mira el caso, no solo un sistema.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq__it">
+          <summary class="faq__q">Si empiezo de cero, ¿tengo alguna posibilidad?</summary>
+          <div class="faq__a">
+            <p>
+              Es el punto de partida del proyecto. La reputación se gana por lo que
+              aportas, cómo te comportas y la calidad de lo que haces, no por cuántos te
+              siguen. Un perfil nuevo entra con oportunidades reales de ser visto desde el
+              primer día.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq__it">
+          <summary class="faq__q">¿Cómo gana dinero ECG?</summary>
+          <div class="faq__a">
+            <p>
+              Con publicidad, suscripciones, comisiones sobre lo que se vende dentro,
+              servicios premium y herramientas para creadores. La idea es que la
+              plataforma solo crezca si a sus participantes les va bien, no a costa de
+              ellos.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq__it">
+          <summary class="faq__q">¿Y yo cómo gano dinero?</summary>
+          <div class="faq__a">
+            <p>
+              Vendiendo productos o servicios en ECG Market, cobrando suscripciones,
+              compitiendo por premios en la Arena y accediendo a las oportunidades que
+              abre tu historial. Todo con el mismo perfil, sin mandar a tu audiencia a
+              otra aplicación.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq__it">
+          <summary class="faq__q">¿Cuándo se lanza?</summary>
+          <div class="faq__a">
+            <p>
+              No hay fecha anunciada. ECG está en construcción y preferimos no prometer un
+              día que todavía no podemos sostener. Si dejas tu correo en la lista de
+              espera, te avisamos en cuanto haya acceso.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq__it">
+          <summary class="faq__q">¿Cuesta dinero entrar?</summary>
+          <div class="faq__a">
+            <p>
+              Entrar y participar será gratuito. Lo de pago serán funciones avanzadas y
+              servicios para quien quiera operar a mayor escala.
+            </p>
+          </div>
+        </details>
       </div>
     </div>
   </section>
