@@ -59,8 +59,8 @@ cualquier exportador que respete el tamaño sirve.
 
 ## Caché: subir el número de versión
 
-`index.html` carga los recursos con un sufijo de versión (`styles.css?v=2`,
-`main.js?v=2`). GitHub Pages los sirve con caché, así que **cada vez que cambies
+`index.html` carga los recursos con un sufijo de versión (`styles.css?v=3`,
+`main.js?v=3`). GitHub Pages los sirve con caché, así que **cada vez que cambies
 el CSS o el JavaScript hay que subir ese número**; si no, quien ya visitó la
 página seguirá ejecutando la versión anterior. Importa sobre todo en `main.js`:
 una versión antigua puede mostrar la confirmación de la lista de espera sin
@@ -68,17 +68,17 @@ enviar el correo a ninguna parte.
 
 ## El formulario de la lista de espera
 
-Va contra [FormSubmit](https://formsubmit.co), que no necesita cuenta. El destino
-está en la constante `FORM_ENDPOINT`, al principio de `js/main.js`.
+Va contra [Web3Forms](https://web3forms.com): 250 envios al mes en el plan
+gratuito. Las altas llegan por correo y quedan ademas en el panel de
+web3forms.com, con 30 dias de historial.
 
-- **Activación**: el primer envío dispara un correo de confirmación a la
-  dirección configurada. Hasta pulsar ese enlace, los envíos no se entregan y la
-  página muestra un error, no una confirmación falsa.
-- **Ocultar el correo**: una vez activado, FormSubmit da un identificador
-  aleatorio que puede sustituir a la dirección en la URL, para que los
-  rastreadores de spam no la encuentren en el código fuente.
-- **Cambiar de servicio**: Formspree (50 envíos/mes) y Web3Forms (250/mes)
-  aceptan el mismo POST con JSON; basta con cambiar `FORM_ENDPOINT`.
+- **Configuracion**: `FORM_ENDPOINT` y `FORM_KEY`, al principio de `js/main.js`.
+- **La access_key es publica por diseno**: identifica a que cuenta entregar el
+  formulario y no da acceso a nada mas. Se revoca desde el panel.
+- **Campo trampa**: el input oculto se llama `botcheck`, que es el nombre que
+  Web3Forms espera para descartar bots.
+- **Cambiar de servicio**: Formspree (50 envios/mes) y FormSubmit (sin cuenta,
+  solo correo) aceptan el mismo POST con JSON; basta cambiar esas constantes.
 
 ## Publicar
 

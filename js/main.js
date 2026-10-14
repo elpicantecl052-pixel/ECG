@@ -5,22 +5,22 @@
   /* ----------------------------------------------------------
      Configuración de la lista de espera
 
-     Servicio actual: FormSubmit (formsubmit.co). No necesita cuenta.
-     La primera vez que alguien envía el formulario, FormSubmit manda un
-     correo de activación a la dirección de abajo; hasta que se pulse ese
-     enlace, los envíos no se entregan.
+     Servicio actual: Web3Forms (web3forms.com). 250 envíos al mes en el
+     plan gratuito. Las altas llegan por correo y quedan además en el panel
+     de web3forms.com, con 30 días de historial.
 
-     Para ocultar el correo del código fuente: una vez activado, FormSubmit
-     da un identificador aleatorio en su panel. Sustituye la dirección por
-     ese identificador y los rastreadores de spam dejan de verlo.
+     La access_key es pública por diseño: identifica a qué cuenta entregar
+     el formulario y no da acceso a nada más. Para cambiarla o revocarla,
+     se hace desde el panel.
 
-     Para cambiar de servicio, basta con cambiar esta constante:
-       Formspree   https://formspree.io/f/TU_ID       (50 envíos/mes)
-       Web3Forms   https://api.web3forms.com/submit   (250 envíos/mes, con access_key)
+     Para cambiar de servicio, basta con cambiar estas constantes:
+       Formspree   https://formspree.io/f/TU_ID          (50 envíos/mes)
+       FormSubmit  https://formsubmit.co/ajax/TU_CORREO  (sin cuenta, solo correo)
      Los tres aceptan JSON por POST y responden JSON.
      ---------------------------------------------------------- */
 
-  var FORM_ENDPOINT = 'https://formsubmit.co/ajax/elpicantecl052@gmail.com';
+  var FORM_ENDPOINT = 'https://api.web3forms.com/submit';
+  var FORM_KEY = 'e5eacba0-513d-4ca1-b2f2-a87307e68f2b';
   var FORM_TIMEOUT = 12000;
 
   var root = document.documentElement;
@@ -194,14 +194,15 @@
     }, FORM_TIMEOUT);
 
     var payload = {
+      access_key: FORM_KEY,
       email: value,
-      _subject: 'ECG — nueva alta en la lista de espera',
-      _template: 'table',
-      _captcha: 'false'
+      subject: 'ECG — nueva alta en la lista de espera',
+      from_name: 'Lista de espera de ECG'
     };
 
+    /* botcheck es el nombre que Web3Forms espera para el campo trampa. */
     var trap = document.getElementById('empresa');
-    if (trap) payload._honey = trap.value;
+    if (trap) payload.botcheck = trap.value;
 
     var options = {
       method: 'POST',
