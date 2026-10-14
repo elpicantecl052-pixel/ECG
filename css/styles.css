@@ -957,6 +957,119 @@ strong { font-weight: 650; }
 }
 
 /* ============================================================
+   Páginas de texto legal
+   ============================================================ */
+
+.legal { padding-block: clamp(48px, 7vh, 88px) var(--sec-y); }
+
+.legal__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 30px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.legal__back:hover { color: var(--accent); }
+
+.legal__h1 {
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  font-weight: 680;
+  line-height: 1.08;
+  letter-spacing: -.03em;
+}
+
+.legal__meta {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: .05em;
+  color: var(--text-muted);
+}
+
+.legal__warn {
+  margin-top: 34px;
+  padding: 20px 24px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+  border-radius: var(--radius);
+  font-size: .95rem;
+  color: var(--text);
+}
+
+.legal__warn strong { color: var(--accent); }
+
+.legal__body { margin-top: 48px; }
+
+.legal__body h2 {
+  margin-top: 56px;
+  margin-bottom: 16px;
+  font-size: clamp(1.3rem, 2.4vw, 1.65rem);
+  font-weight: 650;
+  letter-spacing: -.02em;
+  padding-top: 26px;
+  border-top: 1px solid var(--border);
+}
+
+.legal__body h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+
+.legal__body p,
+.legal__body li {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.legal__body p { margin-top: 14px; }
+
+.legal__body ul {
+  display: grid;
+  gap: 11px;
+  margin-top: 16px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.legal__body ul li {
+  position: relative;
+  padding-left: 19px;
+}
+
+.legal__body ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.legal__body a { color: var(--accent); }
+
+.ph {
+  display: inline-block;
+  padding: 1px 7px;
+  background: var(--accent-soft);
+  border: 1px dashed var(--accent-line);
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: .85em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* ============================================================
    Animación de entrada (la activa el JS; sin JS todo es visible)
    ============================================================ */
 
