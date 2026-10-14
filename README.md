@@ -57,6 +57,29 @@ en un navegador a 1200×630 y reduciéndolo después a paleta de 256 colores
 (319 KB → 78 KB, sin pérdida visible). Si editas el SVG, hay que regenerar el PNG;
 cualquier exportador que respete el tamaño sirve.
 
+## Caché: subir el número de versión
+
+`index.html` carga los recursos con un sufijo de versión (`styles.css?v=2`,
+`main.js?v=2`). GitHub Pages los sirve con caché, así que **cada vez que cambies
+el CSS o el JavaScript hay que subir ese número**; si no, quien ya visitó la
+página seguirá ejecutando la versión anterior. Importa sobre todo en `main.js`:
+una versión antigua puede mostrar la confirmación de la lista de espera sin
+enviar el correo a ninguna parte.
+
+## El formulario de la lista de espera
+
+Va contra [FormSubmit](https://formsubmit.co), que no necesita cuenta. El destino
+está en la constante `FORM_ENDPOINT`, al principio de `js/main.js`.
+
+- **Activación**: el primer envío dispara un correo de confirmación a la
+  dirección configurada. Hasta pulsar ese enlace, los envíos no se entregan y la
+  página muestra un error, no una confirmación falsa.
+- **Ocultar el correo**: una vez activado, FormSubmit da un identificador
+  aleatorio que puede sustituir a la dirección en la URL, para que los
+  rastreadores de spam no la encuentren en el código fuente.
+- **Cambiar de servicio**: Formspree (50 envíos/mes) y Web3Forms (250/mes)
+  aceptan el mismo POST con JSON; basta con cambiar `FORM_ENDPOINT`.
+
 ## Publicar
 
 - **Netlify Drop** — arrastra esta carpeta a <https://app.netlify.com/drop>.
