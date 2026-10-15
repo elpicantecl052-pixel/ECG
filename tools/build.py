@@ -69,8 +69,8 @@ def cabeza(v):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ECG</title>
-<meta name="description" content="ECG es una plataforma social global donde cualquiera puede expresarse, crear, competir, debatir, emprender y generar ingresos. Debate, competencia y economia en un solo ecosistema.">
-<meta name="theme-color" content="#0A0B0D" media="(prefers-color-scheme: dark)">
+<meta name="description" content="ECG, Enriquez Chat Group: una plataforma social global donde cualquiera puede expresarse, crear, competir, debatir, emprender y generar ingresos. Debate, competencia y economia en un solo ecosistema.">
+<meta name="theme-color" content="#0A0A0B" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#FBFBF9" media="(prefers-color-scheme: light)">
 <link rel="canonical" href="{sitio}/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -78,7 +78,7 @@ def cabeza(v):
 <meta property="og:site_name" content="ECG">
 <meta property="og:locale" content="es_ES">
 <meta property="og:url" content="{sitio}/">
-<meta property="og:title" content="ECG — Compite con tus ideas">
+<meta property="og:title" content="ECG — Enriquez Chat Group">
 <meta property="og:description" content="Una plataforma social global construida sobre la libertad de expresion, la competencia justa, el conocimiento y las oportunidades economicas.">
 <meta property="og:image" content="{sitio}/assets/og-image.png">
 <meta property="og:image:type" content="image/png">
@@ -86,7 +86,7 @@ def cabeza(v):
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="ECG — Compite con tus ideas. Destaca con tu talento. Crece con tus resultados.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ECG — Compite con tus ideas">
+<meta name="twitter:title" content="ECG — Enriquez Chat Group">
 <meta name="twitter:description" content="Debate, competencia y economia en un solo ecosistema. Lista de espera abierta.">
 <meta name="twitter:image" content="{sitio}/assets/og-image.png">
 <meta name="twitter:image:alt" content="ECG — Compite con tus ideas. Destaca con tu talento. Crece con tus resultados.">

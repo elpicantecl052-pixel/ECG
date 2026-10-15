@@ -8,21 +8,25 @@
 
 :root {
   /* — Color (oscuro, base) — */
-  --bg:          #0A0B0D;
-  --surface:     #13151A;
-  --surface-2:   #1B1E25;
-  --border:      #262A33;
-  --text:        #F2F3F5;
-  --text-muted:  #A1A7B3;
-  --accent:      #E8B13A;
-  --accent-ink:  #0A0B0D;
-  --accent-soft: rgba(232, 177, 58, .12);
-  --accent-line: rgba(232, 177, 58, .3);
-  --grid-line:   rgba(242, 243, 245, .055);
+  --bg:          #0A0A0B;
+  --surface:     #141416;
+  --surface-2:   #1C1C21;
+  --border:      #2A2A31;
+  --text:        #F2F2F4;
+  --text-muted:  #9C9CA7;
+  --accent:      #E8404A;
+  --accent-deep: #C4162B;
+  --accent-ink:  #FFFFFF;
+  --accent-soft: rgba(232, 64, 74, .13);
+  --accent-line: rgba(232, 64, 74, .32);
+  --metal-1:     #F4F4F6;
+  --metal-2:     #8A8A93;
+  --grid-line:   rgba(242, 242, 244, .05);
   --shadow:      0 1px 2px rgba(0, 0, 0, .5), 0 18px 48px -24px rgba(0, 0, 0, .8);
 
   /* — Tipografía — */
   --font-sans: ui-sans-serif, -apple-system, "Segoe UI Variable Display", "Segoe UI", Inter, Roboto, system-ui, sans-serif;
+  --font-display: "Hoefler Text", "Iowan Old Style", Georgia, "Times New Roman", serif;
   --font-mono: ui-monospace, "Cascadia Code", "SF Mono", SFMono-Regular, Consolas, "Liberation Mono", monospace;
 
   --fs-h1:   clamp(3.4rem, 13vw, 8.5rem);
@@ -43,35 +47,41 @@
 /* — Color (claro) — */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --bg:          #FBFBF9;
+    --bg:          #FAF9F8;
     --surface:     #FFFFFF;
-    --surface-2:   #F2F2EE;
-    --border:      #DEDED7;
-    --text:        #15171C;
-    --text-muted:  #5A6070;
-    --accent:      #996B06;
+    --surface-2:   #F1EFEE;
+    --border:      #DEDAD8;
+    --text:        #141416;
+    --text-muted:  #5C5962;
+    --accent:      #B4121F;
+    --accent-deep: #8E0D18;
     --accent-ink:  #FFFFFF;
-    --accent-soft: rgba(153, 107, 6, .1);
-    --accent-line: rgba(153, 107, 6, .28);
-    --grid-line:   rgba(21, 23, 28, .06);
-    --shadow:      0 1px 2px rgba(21, 23, 28, .06), 0 18px 44px -26px rgba(21, 23, 28, .22);
+    --accent-soft: rgba(180, 18, 31, .09);
+    --accent-line: rgba(180, 18, 31, .28);
+    --metal-1:     #6E6E78;
+    --metal-2:     #A8A8B2;
+    --grid-line:   rgba(20, 20, 22, .06);
+    --shadow:      0 1px 2px rgba(20, 20, 22, .06), 0 18px 44px -26px rgba(20, 20, 22, .22);
     color-scheme: light;
   }
 }
 
 :root[data-theme="light"] {
-  --bg:          #FBFBF9;
+    --bg:          #FAF9F8;
   --surface:     #FFFFFF;
-  --surface-2:   #F2F2EE;
-  --border:      #DEDED7;
-  --text:        #15171C;
-  --text-muted:  #5A6070;
-  --accent:      #996B06;
+  --surface-2:   #F1EFEE;
+  --border:      #DEDAD8;
+  --text:        #141416;
+  --text-muted:  #5C5962;
+  --accent:      #B4121F;
+  --accent-deep: #8E0D18;
   --accent-ink:  #FFFFFF;
-  --accent-soft: rgba(153, 107, 6, .1);
-  --accent-line: rgba(153, 107, 6, .28);
-  --grid-line:   rgba(21, 23, 28, .06);
-  --shadow:      0 1px 2px rgba(21, 23, 28, .06), 0 18px 44px -26px rgba(21, 23, 28, .22);
+  --accent-soft: rgba(180, 18, 31, .09);
+  --accent-line: rgba(180, 18, 31, .28);
+  --metal-1:     #6E6E78;
+  --metal-2:     #A8A8B2;
+  --grid-line:   rgba(20, 20, 22, .06);
+  --shadow:      0 1px 2px rgba(20, 20, 22, .06), 0 18px 44px -26px rgba(20, 20, 22, .22);
   color-scheme: light;
 }
 
@@ -124,7 +134,7 @@ strong { font-weight: 650; }
   z-index: 100;
   transform: translateY(-200%);
   padding: 10px 16px;
-  background: var(--accent);
+  background: var(--accent-deep);
   color: var(--accent-ink);
   font-weight: 650;
   text-decoration: none;
@@ -164,6 +174,7 @@ strong { font-weight: 650; }
 }
 
 .sec__h2 {
+  font-family: var(--font-display);
   font-size: var(--fs-h2);
   font-weight: 680;
   line-height: 1.08;
@@ -190,7 +201,7 @@ strong { font-weight: 650; }
   justify-content: center;
   gap: 8px;
   padding: 11px 20px;
-  background: var(--accent);
+  background: var(--accent-deep);
   color: var(--accent-ink);
   font-size: .95rem;
   font-weight: 650;
@@ -203,7 +214,7 @@ strong { font-weight: 650; }
 }
 
 .btn:hover {
-  filter: brightness(1.08);
+  background: var(--accent);
   transform: translateY(-1px);
 }
 
@@ -264,15 +275,31 @@ strong { font-weight: 650; }
 }
 
 .brand__mark {
-  width: 28px;
-  height: 28px;
-  color: var(--text);
+  width: 27px;
+  height: 30px;
+  flex-shrink: 0;
+  color: var(--accent);
 }
 
 .brand__word {
-  font-size: 1.16rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: .07em;
+  letter-spacing: .2em;
+}
+
+.brand__full {
+  display: none;
+  margin-left: 2px;
+  font-family: var(--font-mono);
+  font-size: .6rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@media (min-width: 1100px) {
+  .brand__full { display: inline; }
 }
 
 .nav__links {
@@ -375,14 +402,16 @@ strong { font-weight: 650; }
 .hero__in { position: relative; }
 
 .hero__h1 {
-  font-size: var(--fs-h1);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 11vw, 7.5rem);
   font-weight: 700;
-  line-height: .86;
-  letter-spacing: -.055em;
+  line-height: .9;
+  letter-spacing: .04em;
   margin-bottom: clamp(20px, 3.4vh, 34px);
 }
 
 .hero__motto {
+  font-family: var(--font-display);
   font-size: clamp(1.4rem, 3.6vw, 2.35rem);
   font-weight: 620;
   line-height: 1.22;
@@ -753,6 +782,7 @@ strong { font-weight: 650; }
 }
 
 .quote p {
+  font-family: var(--font-display);
   max-width: none;
   font-size: clamp(1.5rem, 4.4vw, 2.8rem);
   font-weight: 620;
@@ -1436,7 +1466,7 @@ strong { font-weight: 650; }
 .arena__target {
   position: absolute;
   padding: 10px 15px;
-  background: var(--accent);
+  background: var(--accent-deep);
   color: var(--accent-ink);
   border: none;
   border-radius: 9px;
@@ -1963,3 +1993,22 @@ strong { font-weight: 650; }
 }
 
 .pil__cta a:hover { text-decoration: underline; }
+
+/* ============================================================
+   Emblema del hero
+   ============================================================ */
+
+.hero__lockup {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3vw, 34px);
+  margin-bottom: clamp(20px, 3.4vh, 34px);
+}
+
+.hero__emblema {
+  width: clamp(76px, 12vw, 128px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.hero__lockup .hero__h1 { margin-bottom: 0; }
