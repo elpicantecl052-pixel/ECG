@@ -1,23 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" role="img" aria-label="Emblema de ECG, Enriquez Chat Group">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 106 120" role="img" aria-label="Emblema de ECG, Enriquez Chat Group: un escudo con la cabeza de un puma chileno de frente, partida en negro y rojo.">
   <defs>
-    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#F4F4F6"/>
-      <stop offset=".48" stop-color="#8A8A93"/>
-      <stop offset="1" stop-color="#E8E8EC"/>
+    <linearGradient id="acero" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5A5A64"/><stop offset=".42" stop-color="#2A2A31"/>
+      <stop offset=".58" stop-color="#3E3E47"/><stop offset="1" stop-color="#17171B"/>
     </linearGradient>
+    <linearGradient id="rojo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FF5A62"/><stop offset=".45" stop-color="#C4162B"/>
+      <stop offset=".6" stop-color="#E8404A"/><stop offset="1" stop-color="#7A0C18"/>
+    </linearGradient>
+    <linearGradient id="filo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F4F4F6"/><stop offset=".5" stop-color="#8A8A93"/><stop offset="1" stop-color="#C8C8D0"/>
+    </linearGradient>
+    <clipPath id="mitad"><rect x="50" y="0" width="50" height="100"/></clipPath>
   </defs>
-  <path d="M50 3 L95 19 V62 C95 92 73 111 50 117 C27 111 5 92 5 62 V19 Z" fill="#141416" stroke="url(#metal)" stroke-width="2.6"/>
-  <path d="M50 10 L88 23 V62 C88 87 70 103 50 109 C30 103 12 87 12 62 V23 Z" fill="none" stroke="#C4162B" stroke-width=".9"/>
-  <line x1="50" y1="22" x2="50" y2="104" stroke="url(#metal)" stroke-width="1"/>
-  <g transform="translate(2,34) scale(.54)">
-    <path d="M8 54 C 12 46, 18 41, 26 37 C 31 34.5, 33.5 31.5, 34.5 27.5 L 29 13 L 43 23.5 C 47 21, 51 20.5, 55 22 L 61 9 L 69.5 26 C 74 32, 76 42, 74 52 C 72 64, 67.5 74, 59 82 C 47 87, 33 79, 25.5 70 C 19 64, 12 58, 8 54 Z" fill="#E8404A"/>
-    <path d="M27 44.5 C 30 42.5, 34 42.5, 36.5 45 C 34 47, 30 47.5, 27 44.5 Z" fill="#141416"/>
-    <path d="M9.5 52.5 L15 50.5 L13.5 55 Z" fill="#141416"/>
-    <path d="M13.5 55 C 16 59, 20 60.5, 24 59.5" fill="none" stroke="#141416" stroke-width="2" stroke-linecap="round"/>
-  </g>
-  <g fill="#F2F2F4" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" text-anchor="middle" letter-spacing="1">
-    <text x="72" y="53">E</text>
-    <text x="72" y="72">C</text>
-    <text x="72" y="91">G</text>
+  <path d="M53 4 L99 21 V62 C99 92 77 110 53 116 C29 110 7 92 7 62 V21 Z" fill="#131316" stroke="url(#filo)" stroke-width="2.4"/>
+  <path d="M53 11 L92 25 V62 C92 87 74 102 53 108 C32 102 14 87 14 62 V25 Z" fill="none" stroke="#C4162B" stroke-width=".8"/>
+  <g transform="translate(16,24) scale(.73)">
+    <path d="M50 95 C 42 93, 33 87, 27 77 L 21 62 L 18 46 L 11 11 L 34 27 C 39 23, 44 21, 50 21 C 56 21, 61 23, 66 27 L 89 11 L 82 46 L 79 62 L 73 77 C 67 87, 58 93, 50 95 Z" fill="url(#acero)"/>
+    <g clip-path="url(#mitad)"><path d="M50 95 C 42 93, 33 87, 27 77 L 21 62 L 18 46 L 11 11 L 34 27 C 39 23, 44 21, 50 21 C 56 21, 61 23, 66 27 L 89 11 L 82 46 L 79 62 L 73 77 C 67 87, 58 93, 50 95 Z" fill="url(#rojo)"/></g>
+    <path d="M16 18 L31 30 L20 38 Z" fill="#000" opacity=".55"/>
+    <path d="M84 18 L69 30 L80 38 Z" fill="#000" opacity=".55"/>
+    <path d="M19 40 L45 50 L43 55 L21 47 Z" fill="#000" opacity=".5"/>
+    <path d="M81 40 L55 50 L57 55 L79 47 Z" fill="#000" opacity=".5"/>
+    <path d="M22 45 L43 54 L41 61 L25 55 Z" fill="#FF3B44"/>
+    <path d="M78 45 L57 54 L59 61 L75 55 Z" fill="#FF3B44"/>
+    <path d="M31 50.5 L34.5 52 L33.5 57.5 L30 56 Z" fill="#1A0104"/>
+    <path d="M69 50.5 L65.5 52 L66.5 57.5 L70 56 Z" fill="#1A0104"/>
+    <path d="M42 68 L50 64 L58 68 L50 73 Z" fill="#000" opacity=".6"/>
+    <path d="M50 73 L50 78" stroke="#000" stroke-opacity=".55" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M39 79 L45 82 L50 78 L55 82 L61 79" fill="none" stroke="#000" stroke-opacity=".55" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M46 23 L50 37 L54 23 Z" fill="#000" opacity=".4"/>
+    <path d="M22 62 L34 64 L23 68 Z" fill="#000" opacity=".4"/>
+    <path d="M78 62 L66 64 L77 68 Z" fill="#000" opacity=".4"/>
   </g>
 </svg>

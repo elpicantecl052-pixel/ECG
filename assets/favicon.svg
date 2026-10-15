@@ -1,8 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="ECG">
-  <rect width="100" height="100" rx="22" fill="#0A0A0B"/>
-  <g transform="translate(6,2) scale(.98)">
-    <path d="M8 54 C 12 46, 18 41, 26 37 C 31 34.5, 33.5 31.5, 34.5 27.5 L 29 13 L 43 23.5 C 47 21, 51 20.5, 55 22 L 61 9 L 69.5 26 C 74 32, 76 42, 74 52 C 72 64, 67.5 74, 59 82 C 47 87, 33 79, 25.5 70 C 19 64, 12 58, 8 54 Z" fill="#E8404A"/>
-    <path d="M27 44.5 C 30 42.5, 34 42.5, 36.5 45 C 34 47, 30 47.5, 27 44.5 Z" fill="#0A0A0B"/>
-    <path d="M9.5 52.5 L15 50.5 L13.5 55 Z" fill="#0A0A0B"/>
+  <defs><clipPath id="m"><rect x="50" y="0" width="50" height="100"/></clipPath></defs>
+  <rect width="100" height="100" rx="20" fill="#0A0A0B"/>
+  <g transform="translate(6,2) scale(.88)">
+    <path d="M50 95 C 42 93, 33 87, 27 77 L 21 62 L 18 46 L 11 11 L 34 27 C 39 23, 44 21, 50 21 C 56 21, 61 23, 66 27 L 89 11 L 82 46 L 79 62 L 73 77 C 67 87, 58 93, 50 95 Z" fill="#33333C"/>
+    <g clip-path="url(#m)"><path d="M50 95 C 42 93, 33 87, 27 77 L 21 62 L 18 46 L 11 11 L 34 27 C 39 23, 44 21, 50 21 C 56 21, 61 23, 66 27 L 89 11 L 82 46 L 79 62 L 73 77 C 67 87, 58 93, 50 95 Z" fill="#C4162B"/></g>
+    <path d="M22 45 L43 54 L41 61 L25 55 Z" fill="#FF3B44"/>
+    <path d="M78 45 L57 54 L59 61 L75 55 Z" fill="#FF3B44"/>
   </g>
 </svg>

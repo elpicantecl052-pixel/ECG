@@ -26,7 +26,7 @@
 
   /* — Tipografía — */
   --font-sans: ui-sans-serif, -apple-system, "Segoe UI Variable Display", "Segoe UI", Inter, Roboto, system-ui, sans-serif;
-  --font-display: "Hoefler Text", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-display: var(--font-sans);
   --font-mono: ui-monospace, "Cascadia Code", "SF Mono", SFMono-Regular, Consolas, "Liberation Mono", monospace;
 
   --fs-h1:   clamp(3.4rem, 13vw, 8.5rem);
@@ -275,17 +275,15 @@ strong { font-weight: 650; }
 }
 
 .brand__mark {
-  width: 27px;
+  width: 30px;
   height: 30px;
   flex-shrink: 0;
-  color: var(--accent);
 }
 
 .brand__word {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: .2em;
+  font-size: 1.14rem;
+  font-weight: 800;
+  letter-spacing: .22em;
 }
 
 .brand__full {
@@ -387,6 +385,19 @@ strong { font-weight: 650; }
   background-size: 72px 72px;
   mask-image: radial-gradient(118% 78% at 18% 8%, #000 8%, transparent 72%);
   -webkit-mask-image: radial-gradient(118% 78% at 18% 8%, #000 8%, transparent 72%);
+}
+
+.hero__vetas {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(104deg, transparent 18%, var(--accent-deep) 18.15%, transparent 18.5%),
+    linear-gradient(104deg, transparent 23%, var(--accent-deep) 23.12%, transparent 23.4%),
+    linear-gradient(76deg, transparent 78%, var(--accent-deep) 78.15%, transparent 78.5%),
+    linear-gradient(76deg, transparent 84%, var(--accent-deep) 84.12%, transparent 84.4%);
+  opacity: .5;
+  mask-image: linear-gradient(to bottom, #000 10%, transparent 92%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 10%, transparent 92%);
 }
 
 .hero__glow {
@@ -2000,15 +2011,23 @@ strong { font-weight: 650; }
 
 .hero__lockup {
   display: flex;
-  align-items: center;
-  gap: clamp(18px, 3vw, 34px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(14px, 2.4vw, 24px);
   margin-bottom: clamp(20px, 3.4vh, 34px);
 }
 
 .hero__emblema {
-  width: clamp(76px, 12vw, 128px);
+  width: clamp(72px, 10vw, 104px);
   height: auto;
-  flex-shrink: 0;
 }
 
-.hero__lockup .hero__h1 { margin-bottom: 0; }
+.hero__lockup .hero__h1 {
+  margin-bottom: 0;
+  line-height: 0;
+}
+
+.hero__lockup .hero__h1 img {
+  width: clamp(240px, 36vw, 420px);
+  height: auto;
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95" role="img" aria-label="ECG, Enriquez Chat Group">
+  <defs>
+    <linearGradient id="acero" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5A5A64"/><stop offset=".42" stop-color="#2A2A31"/>
+      <stop offset=".58" stop-color="#3E3E47"/><stop offset="1" stop-color="#17171B"/>
+    </linearGradient>
+    <linearGradient id="rojo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FF5A62"/><stop offset=".45" stop-color="#C4162B"/>
+      <stop offset=".6" stop-color="#E8404A"/><stop offset="1" stop-color="#7A0C18"/>
+    </linearGradient>
+    <linearGradient id="filo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F4F4F6"/><stop offset=".5" stop-color="#8A8A93"/><stop offset="1" stop-color="#C8C8D0"/>
+    </linearGradient>
+  </defs>
+  <path d="M18 24 H78 L70 36 H36 V42 H66 L59 53 H36 V59 H72 L64 71 H18 Z" fill="url(#filo)"/>
+  <path d="M92 24 H146 L138 36 H106 V59 H140 L132 71 H92 Z" fill="url(#filo)"/>
+  <path d="M160 24 H218 L210 36 H174 V59 H200 V51 H186 L193 40 H214 V71 H160 Z" fill="url(#rojo)"/>
+  <line x1="18" y1="80" x2="242" y2="80" stroke="#3A3A42" stroke-width="1"/>
+  <text x="130" y="92" text-anchor="middle" fill="#9C9CA7" font-family="Consolas, monospace" font-size="9" letter-spacing="4.6">ENRIQUEZ <tspan fill="#E8404A">CHAT</tspan> GROUP</text>
+</svg>
