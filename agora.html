@@ -9,9 +9,9 @@
 <meta name="theme-color" content="#0A0B0D" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#FBFBF9" media="(prefers-color-scheme: light)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/reset.css?v=7">
-<link rel="stylesheet" href="css/styles.css?v=7">
-<link rel="stylesheet" href="css/agora.css?v=7">
+<link rel="stylesheet" href="css/reset.css?v=8">
+<link rel="stylesheet" href="css/styles.css?v=8">
+<link rel="stylesheet" href="css/agora.css?v=8">
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
@@ -59,9 +59,17 @@
       </p>
 
       <form id="auth-form" novalidate>
-        <label class="lab__label" for="auth-handle">Nombre de usuario</label>
-        <input class="wait__in" type="text" id="auth-handle" autocomplete="username"
-               placeholder="tu_usuario" maxlength="20" required>
+        <div id="auth-handle-wrap">
+          <label class="lab__label" for="auth-handle">Nombre de usuario</label>
+          <input class="wait__in" type="text" id="auth-handle" autocomplete="username"
+                 placeholder="tu_usuario" maxlength="20">
+        </div>
+
+        <div id="auth-email-wrap" hidden>
+          <label class="lab__label" for="auth-email">Correo electrónico</label>
+          <input class="wait__in" type="email" id="auth-email" autocomplete="email"
+                 placeholder="tu@correo.com">
+        </div>
 
         <div id="auth-pass-wrap" hidden>
           <label class="lab__label" for="auth-pass">Contraseña</label>
@@ -147,8 +155,9 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=7"></script>
-<script src="js/app/store.js?v=7"></script>
-<script src="js/app/agora.js?v=7"></script>
+<script src="js/main.js?v=8"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/app/store.js?v=8"></script>
+<script src="js/app/agora.js?v=8"></script>
 </body>
 </html>

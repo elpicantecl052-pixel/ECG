@@ -4,6 +4,7 @@
   'use strict';
 
   var api = window.ECG.api;
+  var estado = { motor: api.motor };
 
   var el = {
     aviso: document.getElementById('aviso'),
@@ -14,6 +15,9 @@
     authHandle: document.getElementById('auth-handle'),
     authPass: document.getElementById('auth-pass'),
     authPassWrap: document.getElementById('auth-pass-wrap'),
+    authEmail: document.getElementById('auth-email'),
+    authEmailWrap: document.getElementById('auth-email-wrap'),
+    authHandleWrap: document.getElementById('auth-handle-wrap'),
     authErr: document.getElementById('auth-err'),
     authTitulo: document.getElementById('auth-titulo'),
     authSubmit: document.getElementById('auth-submit'),
@@ -86,10 +90,19 @@
 
   function pintarModoAuth() {
     var registrando = modo === 'registrar';
+    var conBase = esSupabase();
+
     texto(el.authTitulo, registrando ? 'Crear cuenta' : 'Entrar');
     texto(el.authSubmit, registrando ? 'Crear cuenta' : 'Entrar');
     texto(el.authToggle, registrando ? 'Ya tengo cuenta' : 'Crear una cuenta');
-    el.authPassWrap.hidden = !esSupabase();
+
+    /* Con base de datos real las cuentas van por correo: al registrarse
+       hacen falta usuario, correo y contraseña; al entrar basta el correo. */
+    el.authPassWrap.hidden = !conBase;
+    el.authEmailWrap.hidden = !conBase;
+    el.authHandleWrap.hidden = conBase && !registrando;
+
+    el.authPass.autocomplete = registrando ? 'new-password' : 'current-password';
     limpiarError(el.authErr);
   }
 
@@ -117,15 +130,20 @@
     limpiarError(el.authErr);
     var handle = el.authHandle.value.trim().toLowerCase();
     var pass = el.authPass.value;
+    var correo = el.authEmail.value.trim().toLowerCase();
+    var conBase = esSupabase();
 
+    el.authSubmit.disabled = true;
     try {
-      if (modo === 'registrar') await api.registrar(handle, pass);
-      else await api.entrar(handle, pass);
+      if (modo === 'registrar') await api.registrar(handle, pass, correo);
+      else await api.entrar(conBase ? correo : handle, pass);
       el.authForm.reset();
       await pintarSesion();
       await pintarTemas();
     } catch (err) {
       mostrarError(el.authErr, err.message);
+    } finally {
+      el.authSubmit.disabled = false;
     }
   });
 
@@ -354,12 +372,28 @@
      ========================================================== */
 
   (async function iniciar() {
-    if (esSupabase()) {
+    estado = await window.ECG.comprobar();
+    api = window.ECG.api;
+
+    if (estado.motor === 'supabase') {
       texto(el.motor, 'Base de datos conectada');
       el.aviso.hidden = true;
     } else {
       texto(el.motor, 'Modo local');
       el.aviso.hidden = false;
+
+      if (estado.motivo === 'sin-tablas') {
+        el.aviso.innerHTML =
+          '<p><strong>Base de datos sin preparar.</strong> Las claves funcionan, pero las ' +
+          'tablas todavia no existen: falta ejecutar docs/schema.sql en el SQL Editor de ' +
+          'Supabase. Mientras tanto, el Agora funciona en este navegador y lo que escribas ' +
+          'no lo ve nadie mas.</p>';
+      } else if (estado.motivo === 'sin-conexion') {
+        el.aviso.innerHTML =
+          '<p><strong>Base de datos no disponible.</strong> El proyecto gratuito se pausa ' +
+          'tras una semana sin uso; se despierta desde el panel de Supabase. Mientras ' +
+          'tanto, el Agora funciona en este navegador.</p>';
+      }
     }
 
     pintarModoAuth();

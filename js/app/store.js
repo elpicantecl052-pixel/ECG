@@ -14,8 +14,8 @@
   'use strict';
 
   var CONFIG = {
-    url: 'PENDIENTE',
-    anonKey: 'PENDIENTE'
+    url: 'https://ggficdasuhtnzagvtknk.supabase.co',
+    anonKey: 'sb_publishable_oRtwBE-Abqhtm5X5xP1OAQ_77hmpDWl'
   };
 
   var usandoSupabase =
@@ -264,11 +264,12 @@
   function MotorSupabase() {
     var sb = window.supabase.createClient(CONFIG.url, CONFIG.anonKey);
 
-    /* Supabase Auth necesita un correo. Para el Ágora pedimos solo el
-       nombre de usuario, así que derivamos un correo interno a partir de
-       él. Es un detalle de implementación, no algo que el usuario vea. */
-    function correoDe(handle) {
-      return handle + '@agora.ecg.invalid';
+    function validarCorreo(email) {
+      var e = (email || '').trim().toLowerCase();
+      if (!/^[^\s@]+@[^\s@.]+(\.[^\s@.]+)+$/.test(e)) {
+        throw new Error('Escribe un correo válido.');
+      }
+      return e;
     }
 
     async function perfil() {
@@ -286,7 +287,10 @@
         throw new Error('Ese nombre de usuario ya está ocupado.');
       }
       if (/Invalid login/i.test(error.message)) {
-        throw new Error('Usuario o contraseña incorrectos.');
+        throw new Error('Correo o contraseña incorrectos.');
+      }
+      if (/Email not confirmed/i.test(error.message)) {
+        throw new Error('Tienes que confirmar tu correo antes de entrar.');
       }
       throw new Error(error.message);
     }
@@ -296,24 +300,34 @@
 
       usuarioActual: perfil,
 
-      async registrar(handle, password) {
+      async registrar(handle, password, email) {
         validarHandle(handle);
+        var correo = validarCorreo(email);
         if (!password || password.length < 8) {
           throw new Error('La contraseña necesita al menos 8 caracteres.');
         }
+
+        var libre = await sb.from('profiles').select('handle').eq('handle', handle);
+        if (libre.data && libre.data.length) {
+          throw new Error('Ese nombre de usuario ya está ocupado.');
+        }
+
         var r = await sb.auth.signUp({
-          email: correoDe(handle),
+          email: correo,
           password: password,
           options: { data: { handle: handle } }
         });
         fallar(r.error);
+
+        if (!r.data || !r.data.session) {
+          throw new Error('Cuenta creada. Revisa tu correo y confirma la dirección para poder entrar.');
+        }
         return perfil();
       },
 
-      async entrar(handle, password) {
-        validarHandle(handle);
+      async entrar(email, password) {
         var r = await sb.auth.signInWithPassword({
-          email: correoDe(handle),
+          email: validarCorreo(email),
           password: password || ''
         });
         fallar(r.error);
@@ -427,6 +441,26 @@
   }
 
   window.ECG = window.ECG || {};
-  window.ECG.api = usandoSupabase ? MotorSupabase() : MotorLocal();
   window.ECG.config = CONFIG;
+  window.ECG.api = usandoSupabase ? MotorSupabase() : MotorLocal();
+
+  /* Comprueba que la base de datos responde antes de confiar en ella.
+     Si las tablas no existen todavia, o si el proyecto gratuito esta
+     pausado por inactividad, la aplicacion cae al motor local en vez de
+     quedarse rota. Devuelve el motivo para poder avisar al visitante. */
+  window.ECG.comprobar = async function () {
+    if (!usandoSupabase) return { motor: 'local', motivo: 'sin-claves' };
+
+    try {
+      await window.ECG.api.listarTemas();
+      return { motor: 'supabase' };
+    } catch (e) {
+      var msg = String((e && e.message) || e);
+      var motivo = /schema cache|does not exist/i.test(msg)
+        ? 'sin-tablas'
+        : 'sin-conexion';
+      window.ECG.api = MotorLocal();
+      return { motor: 'local', motivo: motivo, detalle: msg };
+    }
+  };
 })();
