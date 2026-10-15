@@ -322,6 +322,20 @@
         if (!r.data || !r.data.session) {
           throw new Error('Cuenta creada. Revisa tu correo y confirma la dirección para poder entrar.');
         }
+
+        /* El disparador de la base de datos crea el perfil al registrarse,
+           pero es opcional: si no está instalado, lo creamos aquí. La
+           política de RLS solo permite insertar el perfil propio, así que
+           esto es seguro. */
+        var yo = r.data.user;
+        if (yo) {
+          var existe = await sb.from('profiles').select('id').eq('id', yo.id);
+          if (!existe.data || !existe.data.length) {
+            var ins = await sb.from('profiles').insert({ id: yo.id, handle: handle });
+            if (ins.error && !/duplicate key/i.test(ins.error.message)) fallar(ins.error);
+          }
+        }
+
         return perfil();
       },
 
